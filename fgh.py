@@ -69,8 +69,9 @@ class FGH:
             g = o*s.g
             h = o*s.h
         return FGH(f,g,h)
-
-    __rmul__ = __mul__
+    
+    def __rmul__(s, o):
+        return __mul__(o ,s)
 
     def __matmul__(s, o ):
         if type(o) == type(s):
