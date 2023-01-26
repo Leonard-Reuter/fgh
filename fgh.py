@@ -183,4 +183,6 @@ def det(A):
         det += (-1)**((i+1)//2) * np.prod([A[i,j] for (i,j) in zip(x,p)])
     return det
 
+def I(n):
+    return FGH(1.0, np.zeros(n), np.zeros((n,n)))
 
