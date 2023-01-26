@@ -59,6 +59,8 @@ class FGH:
     def __mul__(s, o):
         if type(o) == type(s):
             # mul (*) is defined for two functions, which have different variables!
+            # this implies an order for the multiplication and sometimes requires
+            # the neutral element I
             f = s.f*o.f
             g = np.append(o.f*s.g, s.f*o.g)
             out = np.outer(s.g,o.g)
