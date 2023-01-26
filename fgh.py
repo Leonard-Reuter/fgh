@@ -1,4 +1,5 @@
 import numpy as np
+from itertools import permutations
 
 class FGH:
     # class to store and propagate
@@ -172,4 +173,14 @@ def norm(R):
         g = np.full(n, np.nan)
         h = np.full((n,n), np.nan)
     return FGH(f,g,h)
+
+def det(A):
+    n = np.size(A,0)
+    det = 0.0
+    x = np.arange(n)
+    for i, p in enumerate(permutations(x)):
+        # the signature of the permutations is +, -, -, +, +, -, -, +, +, ...
+        det += (-1)**((i+1)//2) * np.prod([A[i,j] for (i,j) in zip(x,p)])
+    return det
+
 
