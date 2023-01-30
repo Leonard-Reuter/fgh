@@ -121,7 +121,7 @@ class FGH:
         return FGH(f,g,h)
 
     def log(s):
-        if abs(s.f) > 0:
+        if s.f > 0:
             f = np.log(s.f)
             g = s.g/s.f
             h = (s.f*s.h - np.outer(s.g,s.g))/s.f**2
