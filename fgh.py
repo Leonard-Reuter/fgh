@@ -151,7 +151,7 @@ hessian:
         f = np.linalg.norm(s.g)
         g = s.h@s.g/f
         h = np.full(s.h.shape, np.nan)
-        return FHG(f,g,h)
+        return FGH(f,g,h)
 
     def denanify(s):
         f = s.f
